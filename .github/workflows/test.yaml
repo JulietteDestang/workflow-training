@@ -34,7 +34,9 @@ jobs:
       - name: run coverage
         run: make coverage > coverage_outputs.txt
 
-      - uses: actions/upload-artifact@v2
+      - name: artifact
+        continue-on-error: true
+        uses: actions/upload-artifact@v2
         with:
           name: coverage_outputs
           path: coverage_outputs.txt
